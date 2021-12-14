@@ -60,7 +60,7 @@ exports.login = (req, res, next) => {
               nom: results[0].nom,
               prenom: results[0].prenom,
               admin: results[0].admin,
-              token: jwt.sign({ userId: results[0].id }, 'my_secret_key', {
+              token: jwt.sign({ userId: results[0].id }, 'RANDOM_TOKEN_SECRET', {
                 expiresIn: '8h',
               }),
             });
