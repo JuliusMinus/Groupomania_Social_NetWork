@@ -1,7 +1,7 @@
 const db = require('../models/DataBase');
 
 // Afficher tout les paper //
-exports.getAllPaper = (req, res, next) => {
+exports.getAllPapers = (req, res, next) => {
     db.query('SELECT p.*, u.nom, u.prenom, u.imgURL FROM groupomania.paper p INNER JOIN groupomania.user u  ON u.id = p.userID ORDER BY date DESC', 
     (error, results) => {
         if (error) {
