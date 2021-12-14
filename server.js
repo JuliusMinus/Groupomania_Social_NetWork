@@ -1,5 +1,10 @@
 const http = require('http');
 const app = require('./app');
+require('dotenv').config();
+// erreur d'option lors de la création d'un user dans le front.
+
+const cors = require('cors');
+app.use(cors()) 
 
 const normalizePort = val => {
   const port = parseInt(val, 10);
